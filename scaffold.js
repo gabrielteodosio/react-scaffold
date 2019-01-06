@@ -70,13 +70,6 @@ async function run() {
     NAME = await askInput('Please re-enter the Name:');
   }
 
-  const FILES = [
-    { fileName: `${NAME.toLocaleLowerCase()}.list.jsx`, data: data[TYPE] },
-    `${NAME.toLocaleLowerCase()}.modal.form.jsx`,
-    `${NAME.toLocaleLowerCase()}s.jsx`,
-    `${NAME.toLocaleLowerCase()}.info.jsx`,
-  ];
-
   const typeLetter = await askInput(
     'Please enter the type:\nC -> Stateful Component; c -> Stateless Component ; P -> Page (with Redux); p -> Page (without Redux)',
   );
@@ -84,6 +77,13 @@ async function run() {
   let TYPE = await validateType(typeLetter, false);
 
   const data = template_generator(NAME);
+
+  const FILES = [
+    { fileName: `${NAME.toLocaleLowerCase()}.list.jsx`, data: data[TYPE] },
+    { fileName: `${NAME.toLocaleLowerCase()}.modal.form.jsx`, data: data[TYPE] },
+    { fileName: `${NAME.toLocaleLowerCase()}s.jsx`, data: data[TYPE] },
+    { fileName: `${NAME.toLocaleLowerCase()}.info.jsx`, data: data[TYPE] },
+  ];
 
   FILES.forEach((file, index) => {
     if (index === 0) {
