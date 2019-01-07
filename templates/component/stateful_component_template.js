@@ -1,7 +1,10 @@
+const name_generator = require('../../utils/name_generator');
+
 const stateful_component_template = (name) => {
+  const componentName = name_generator(name);
   const template = `import React, { Component } from \'react\';
 
-class ${name} extends {
+class ${componentName} extends Component {
   constructor(props) {
     super(props);
 
@@ -15,7 +18,7 @@ class ${name} extends {
   };
 }
 
-export default ${name};
+export default ${componentName};
 `;
 
   return template;

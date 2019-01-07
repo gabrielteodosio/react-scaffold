@@ -1,8 +1,11 @@
+const name_generator = require('../../utils/name_generator');
+
 const simple_page_template = (name) => {
+  const className = name_generator(name);
   const template = `import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 
-class ${name} extends Component {
+class ${className} extends Component {
   constructor(props) {
     super(props);
 
@@ -22,7 +25,7 @@ class ${name} extends Component {
   };
 }
 
-export default withRouter(${name});
+export default withRouter(${className});
 `;
 
   return template;

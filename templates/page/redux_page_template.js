@@ -1,10 +1,13 @@
+const name_generator = require('../../utils/name_generator');
+
 const redux_page_template = (name) => {
+  const className = name_generator(name);
   const template = `import React, { Component } from \'react\';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { bindActionCreators } from 'redux';
 
-class ${name} extends Component {
+class ${className} extends Component {
   constructor(props) {
     super(props);
 
@@ -24,7 +27,7 @@ class ${name} extends Component {
   };
 }
 
-const RouterWrapped = withRouter(${name});
+const RouterWrapped = withRouter(${className});
 
 const bindActions = (dispatch) => {
   return {
