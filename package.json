@@ -1,6 +1,6 @@
 {
   "name": "reactjs-simple-scaffold",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An utility tool to generate files to you.",
   "main": "scaffold.js",
   "dependencies": {
@@ -20,7 +20,8 @@
     "react-scaffold",
     "scaffold",
     "generator",
-    "react-file-generator"
+    "react-file-generator",
+    "reactjs-simple-scaffold"
   ],
   "author": "Gabriel T Marques",
   "license": "GNU3",
